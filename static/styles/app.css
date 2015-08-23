@@ -131,29 +131,19 @@ span.name {
 
 
 /*customized*/
-.tab-container{
-  background-color: grey;
-  position: relative;
-}
-
-.card-list{
-  background-color: green;
-  height: 700px;
-}
-
-.card-list md-item{
-  height: 20px;
-  background-color: grey;
+.tweet {
+  border: 1px solid #e1e8ed;
+  padding: 3px;
+  border-radius: 5px;
   margin-bottom: 5px;
 }
 
-
-
-.preview{
-  max-height: 200px;
-  max-width: 300px;
+.tweet .profile-img {
+  width: 48px;
 }
 
+.tweet .content {
+}
 
 
 
