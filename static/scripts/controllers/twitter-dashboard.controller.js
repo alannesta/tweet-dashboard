@@ -1,6 +1,6 @@
 angular
     .module('deckbuilder')
-    .controller('PlaygroundController', ['$scope', 'Tweets', function ($scope, Tweets) {
+    .controller('PlaygroundController', ['$scope', 'Tweets', '$document', function ($scope, Tweets, $document) {
         //$scope.appdirect_tweets = new Tweets();
 
         Tweets.get({
