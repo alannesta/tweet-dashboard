@@ -1,0 +1,24 @@
+<div layout="row" layout-margin layout-padding layout-fill>
+    <div layout="column" flex="30" layout-margin layout-padding layout-fill>
+        <h1>{{appdirect_tweets[0].user.name}}</h1>
+        <div ng-repeat="tweets in appdirect_tweets">
+            {{tweets.text}}
+        </div>
+    </div>
+    <div layout="column" flex="30" layout-margin layout-padding layout-fill>
+        <h1>{{techcrunch_tweets[0].user.name}}</h1>
+        <div ng-repeat="tweets in techcrunch_tweets">
+            {{tweets.text}}
+        </div>
+    </div>
+    <div layout="column" flex="30" layout-margin layout-padding layout-fill>
+        <h1>{{laughingsquid_tweets[0].user.name}}</h1>
+        <div ng-repeat="tweets in laughingsquid_tweets">
+            {{tweets.text}}
+        </div>
+    </div>
+</div>
+
+<blockquote class="twitter-tweet"><p>Happy 50th anniversary to the Wilderness Act! Here's a great wilderness photo from <a href="https://twitter.com/YosemiteNPS">@YosemiteNPS</a>. <a href="https://twitter.com/hashtag/Wilderness50?src=hash">#Wilderness50</a> <a href=\"http://t.co/HMhbyTg18X\">pic.twitter.com/HMhbyTg18X</a></p>— US Dept of Interior (@Interior) <a href=\"https://twitter.com/Interior/status/507185938620219395\">September 3, 2014</a></blockquote>\n<script async src="http://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
