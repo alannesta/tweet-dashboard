@@ -1,59 +1,28 @@
 <div id="tweets-container" layout="row" layout-margin layout-padding layout-fill>
     <div id="tweets-appdirect" layout="column" flex="32">
-        <h1>{{appdirect_tweets[0].user.name}}</h1>
-        <div class="tweet" layout="row" ng-repeat="tweet in appdirect_tweets">
-            <section class="profile-img">
-                <img ng-src="{{tweet.user.profile_image_url}}">
-            </section>
-            <section class="content">
-                <blockquote>{{tweet.text}}</blockquote>
-            </section>
-        </div>
-    </div>
-
-
-    <div id="tweets-" layout="column" flex="32">
         <md-list>
-            <md-list-item class="md-3-line" ng-repeat="tweet in appdirect_tweets">
-                <img ng-src="{{tweet.user.profile_image_url}}" class="md-avatar">
-                <div class="md-list-item-text">
-                    <span>{{appdirect_tweets[0].user.name}}</span><span>{{tweet.created_at}}</span>
-                    <p>{{tweet.text}}</p>
-                    <block-quote>{{tweet.created_at}}</block-quote>
-                </div>
-                <md-divider></md-divider>
+            <md-list-item ng-repeat="tweet in appdirect_tweets">
+                <tweet-widget id = "tweet.id_str"></tweet-widget>
             </md-list-item>
         </md-list>
     </div>
 
-    <div layout="column" flex="32">
+    <div id="tweets-laughingsquid" layout="column" flex="32">
         <md-list>
-            <md-list-item class="md-3-line" ng-repeat="tweet in appdirect_tweets">
-                <img ng-src="{{tweet.user.profile_image_url}}" class="md-avatar">
-                <div class="md-list-item-text">
-                    <span>{{appdirect_tweets[0].user.name}}</span><span>{{tweet.created_at}}</span>
-                    <p>{{tweet.text}}</p>
-                    <block-quote>{{tweet.created_at}}</block-quote>
-                </div>
-                <md-divider></md-divider>
+            <md-list-item ng-repeat="tweet in laughingsquid_tweets">
+                <tweet-widget id = "tweet.id_str"></tweet-widget>
             </md-list-item>
         </md-list>
     </div>
 
+    <div id="tweets-techcrunch" layout="column" flex="32">
+        <md-list>
+            <md-list-item ng-repeat="tweet in techcrunch_tweets">
+                <tweet-widget id = "tweet.id_str"></tweet-widget>
+            </md-list-item>
+        </md-list>
+    </div>
 
-
-    <!--<div layout="column" flex="32" layout-margin layout-padding layout-fill>-->
-        <!--<h1>{{techcrunch_tweets[0].user.name}}</h1>-->
-        <!--<div ng-repeat="tweet in techcrunch_tweets">-->
-            <!--{{tweet.text}}-->
-        <!--</div>-->
-    <!--</div>-->
-    <!--<div layout="column" flex="32" layout-margin layout-padding layout-fill>-->
-        <!--<h1>{{laughingsquid_tweets[0].user.name}}</h1>-->
-        <!--<div ng-repeat="tweet in laughingsquid_tweets">-->
-            <!--{{tweet.text}}-->
-        <!--</div>-->
-    <!--</div>-->
 </div>
 
 

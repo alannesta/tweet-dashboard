@@ -72,9 +72,9 @@ gulp.task('index', function() {
 
 gulp.task('serve', function() {
     nodemon({
-        script: 'server.js'
-        , ext: 'js html'
-        , env: { 'NODE_ENV': 'development' }
+        script: 'server.js',
+        //ext: 'js html',
+        env: { 'NODE_ENV': 'development' }
     })
 });
 
