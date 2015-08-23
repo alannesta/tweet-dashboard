@@ -1,12 +1,21 @@
 angular
     .module('deckbuilder')
     .controller('PlaygroundController', ['$scope', 'Tweets', '$document', function ($scope, Tweets, $document) {
-        //$scope.appdirect_tweets = new Tweets();
 
         Tweets.get({
             screen_name: 'AppDirect'
         }, function (result) {
-            $scope.appdirect_tweets = result.tweets;
+            //$scope.appdirect_tweets = result.tweets;
+            console.log(result);
+            $document.find('body').append($(result.tweets));
+            twttr.widgets.load($document[0].getElementsByTagName('body'));
+            //twttr.widgets.createTweet(
+            //    result.id,
+            //    document.getElementById('tweets-container'),
+            //    {
+            //        theme: 'dark'
+            //    }
+            //);
         });
 
         Tweets.get({
