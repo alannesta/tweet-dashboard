@@ -21,12 +21,23 @@ describe('Dashboard Controller Test', function () {
 
     }));
 
-    it('should set up the tests', function(){
-        console.log('tests running');
+    it('should load three columns of tweets', function(){
         controller = $controller('DashboardController', {
             $scope: scope,
             Tweets: Tweets
         });
         expect(Tweets.get.calls.count()).toEqual(3);
+    });
+
+    it('should refresh page on config change', function(){
+        var childScope = scope.$new();
+        controller = $controller('DashboardController', {
+            $scope: scope,
+            Tweets: Tweets
+        });
+        childScope.$emit('refresh');
+        $rootScope.$digest();
+        expect(Tweets.get.calls.count()).toEqual(6);
+
     });
 });

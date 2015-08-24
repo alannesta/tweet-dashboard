@@ -11,21 +11,15 @@ var spawn = require('child_process').spawn;
 var nodemon = require('gulp-nodemon');
 var KarmaServer = require('karma').Server;
 
-// Configuration
-var watching = false;
 
 gulp.task('default', function(cb) {
     //runSequence('install', 'index', 'watch', 'serve', cb);
-    runSequence('index', 'serve', cb);
+    runSequence('index', 'test', 'serve', 'watch', cb);
 });
 
-//gulp.task('watch', function() {
-//    watching = true;
-//
-//    gulp.watch(['static/index.html'], ['index']);
-//    gulp.watch(['static/scripts/**/*.html'], ['templates']);
-//    gulp.watch(['static/scripts/**/*.js'], ['scripts']);
-//});
+gulp.task('watch', function() {
+    gulp.watch(['static/scripts/**/*.js'], ['test']);
+});
 
 //gulp.task('build', function(cb) {
 //    runSequence('clean', ['assets', 'templates', 'scripts'], 'index', cb);

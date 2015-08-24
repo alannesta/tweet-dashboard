@@ -9,12 +9,6 @@ angular
         loadConfig();
         loadTweets();
 
-        $scope.$on('refresh', function() {
-            console.log('refresh tweets');
-            loadConfig();
-            loadTweets();
-        });
-
         function loadTweets() {
 
             Tweets.get({
@@ -40,13 +34,14 @@ angular
         }
 
         function loadConfig() {
-            if (layoutConfig.getConfig())  {
-                $scope.layoutConfig = layoutConfig.getConfig()
-            } else {
-                $scope.layoutConfig = defaultConfig;
-                layoutConfig.saveConfig($scope.layoutConfig);
-            }
+            $scope.layoutConfig = layoutConfig.getConfig()
         }
+
+        $scope.$on('refresh', function() {
+            console.log('refresh tweets');
+            loadConfig();
+            loadTweets();
+        });
 
     }]);
 
