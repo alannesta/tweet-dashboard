@@ -138,6 +138,30 @@ span.name {
 .settings-title {
   line-height: 64px;
 }
+
+.settings-list h3 {
+  margin-left: 5px;
+}
+
+.slider-container {
+  width:85%
+}
+
+.slider-container input {
+  text-align: center;
+  margin-left: 15px;
+  margin-bottom: 5px;
+}
+
+.count-settings md-input-container {
+  width: 90%;
+}
+
+.count-settings md-input-container label {
+  -webkit-order: 0;
+  order: 0;
+}
+
 /*.tweet {*/
   /*border: 1px solid #e1e8ed;*/
   /*padding: 3px;*/
