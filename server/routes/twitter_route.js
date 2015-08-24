@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var Twitter = require('twitter');   // TODO: change to official npm twit
-var Twit = require('twit');
+var Twitter = require('twitter');
 var config = require('../config');
 
 var client = new Twitter(config.twitter_api_config);

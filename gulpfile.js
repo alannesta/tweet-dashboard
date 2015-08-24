@@ -9,7 +9,7 @@ var gulp = require('gulp');
 var runSequence = require('run-sequence');
 var spawn = require('child_process').spawn;
 var nodemon = require('gulp-nodemon');
-//var KarmaServer = require('karma').Server;
+var KarmaServer = require('karma').Server;
 
 // Configuration
 var watching = false;
@@ -45,7 +45,7 @@ gulp.task('index', function() {
     var inject = require('gulp-inject');
 
     return gulp.src('static/index.html')
-        .pipe(inject(gulp.src(['static/scripts/**/*.js'], {read: false}), {
+        .pipe(inject(gulp.src(['static/scripts//**/!(*.spec).js'], {read: false}), {
             ignorePath: ['static'],
             addRootSlash: false
         }))
@@ -87,14 +87,14 @@ gulp.task('serve', function() {
 //    server.start();
 //});
 //
-//gulp.task('test', function(cb) {
-//    var server = new KarmaServer({
-//        configFile: __dirname + '/karma.conf.js',
-//        singleRun: true
-//    }, cb);
-//
-//    server.start();
-//});
+gulp.task('test', function(cb) {
+    var server = new KarmaServer({
+        configFile: __dirname + '/karma.conf.js',
+        singleRun: true
+    }, cb);
+
+    server.start();
+});
 
 
 //gulp.task('start', function () {
