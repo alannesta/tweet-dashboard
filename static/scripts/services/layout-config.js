@@ -1,4 +1,4 @@
-angular.module('deckbuilder').service('layoutConfig', function () {
+angular.module('twitter-dashboard').service('layoutConfig', function () {
     var self = this;
     var defaultConfig =  {
         count: {

@@ -1,6 +1,6 @@
 angular
-    .module('deckbuilder')
-    .controller('PlaygroundController', ['$scope', 'Tweets', '$mdSidenav', 'layoutConfig', function ($scope, Tweets, $mdSidenav, layoutConfig) {
+    .module('twitter-dashboard')
+    .controller('DashboardController', ['$scope', 'Tweets', '$mdSidenav', 'layoutConfig', function ($scope, Tweets, $mdSidenav, layoutConfig) {
 
         $scope.toggleSettings = function() {
             $mdSidenav('settings').toggle();

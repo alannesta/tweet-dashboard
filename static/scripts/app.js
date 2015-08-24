@@ -1,5 +1,5 @@
 angular
-    .module('deckbuilder', ['ngMaterial', 'ngRoute', 'ngResource'])
+    .module('twitter-dashboard', ['ngMaterial', 'ngRoute', 'ngResource'])
     .config(function ($mdThemingProvider, $mdIconProvider, $routeProvider) {
 
         $mdIconProvider
@@ -14,7 +14,7 @@ angular
         $routeProvider
             .when('/', {
                 templateUrl: 'views/playground.html',
-                controller: 'PlaygroundController as ctrl'
+                controller: 'DashboardController as ctrl'
             })
 
     });

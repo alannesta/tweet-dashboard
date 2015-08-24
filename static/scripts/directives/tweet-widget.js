@@ -1,4 +1,4 @@
-angular.module('deckbuilder').directive('tweetWidget', function() {
+angular.module('twitter-dashboard').directive('tweetWidget', function() {
     return {
         restrict: 'E',
         link: function(scope, element, attrs) {

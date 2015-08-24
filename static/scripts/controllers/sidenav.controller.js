@@ -1,5 +1,5 @@
 angular
-    .module('deckbuilder')
+    .module('twitter-dashboard')
     .controller('SideNavController', ['$scope', 'layoutConfig', function($scope, layoutConfig) {
         console.log('sidenav init');
         //$scope.$on('destroy', function() {

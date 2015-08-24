@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>DeckBuilder</title>
+    <title>Twitter Dashboard</title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,7 +30,7 @@
     <script id="twitter-wjs" src="https://platform.twitter.com/widgets.js"></script>
 </head>
 
-<body ng-app="deckbuilder" layout="column">
+<body ng-app="twitter-dashboard" layout="column">
 
 <div ng-view style="height:100%">
 </div>
@@ -50,11 +50,9 @@
 <script src="scripts/controllers/sidenav.controller.js"></script>
 <script src="scripts/controllers/twitter-dashboard.controller.js"></script>
 <script src="scripts/controllers/twitter-dashboard.controller.spec.js"></script>
-<script src="scripts/directives/csj-drag.js"></script>
-<script src="scripts/directives/csj-drop.js"></script>
-<script src="scripts/directives/tweet-widget.js"></script>
 <script src="scripts/services/layout-config.js"></script>
 <script src="scripts/services/tweets.js"></script>
+<script src="scripts/directives/tweet-widget.js"></script>
 <!-- endinject -->
 </body>
 </html>
