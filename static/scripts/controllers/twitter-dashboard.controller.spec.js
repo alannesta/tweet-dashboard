@@ -27,6 +27,6 @@ describe('Dashboard Controller Test', function () {
             $scope: scope,
             Tweets: Tweets
         });
-        expect(Tweets.get).toHaveBeenCalled();
+        expect(Tweets.get.calls.count()).toEqual(3);
     });
 });

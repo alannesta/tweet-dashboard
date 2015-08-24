@@ -12,7 +12,7 @@
 <div ng-include="'views/templates/sidenav.html'" layout="vertical" ng-controller="SideNavController as ctrl"></div>
 <div layout="column" layout-fill>
     <div id="tweets-container" layout="row" layout-margin layout-padding layout-fill>
-        <div id="tweets-appdirect" layout="column" flex="32">
+        <div layout="column" flex="32">
             <md-list>
                 <md-list-item ng-repeat="tweet in first_column_tweets">
                     <tweet-widget id = "tweet.id_str"></tweet-widget>
@@ -20,7 +20,7 @@
             </md-list>
         </div>
 
-        <div id="tweets-laughingsquid" layout="column" flex="32">
+        <div layout="column" flex="32">
             <md-list>
                 <md-list-item ng-repeat="tweet in second_column_tweets">
                     <tweet-widget id = "tweet.id_str"></tweet-widget>
@@ -28,7 +28,7 @@
             </md-list>
         </div>
 
-        <div id="tweets-techcrunch" layout="column" flex="32">
+        <div layout="column" flex="32">
             <md-list>
                 <md-list-item ng-repeat="tweet in third_column_tweets">
                     <tweet-widget id = "tweet.id_str"></tweet-widget>
