@@ -1,21 +1,9 @@
-<md-toolbar>
-    <div class="md-toolbar-tools">
-        <md-button class="md-icon-button" aria-label="Settings" ng-click="toggleSettings()">
-            <md-icon md-svg-icon="menu"></md-icon>
-        </md-button>
-        <!-- fill up the space between left and right area -->
-        <span flex></span>
-        <md-icon md-svg-icon="twitter"></md-icon>
-        <span class="app-title">Twitter Dashboard</span>
-    </div>
-</md-toolbar>
-<!--<div ng-include="'views/templates/sidenav.html'" layout="vertical"></div>-->
-<md-sidenav md-component-id="settings" class="md-sidenav-left">
-
+<md-sidenav md-component-id="settings" class="md-sidenav-left" flex>
     <md-toolbar class="md-primary md-hue-3" style="text-align: center">
         <span class="settings-title">App Settings</span>
     </md-toolbar>
     <md-content>
+        <!--<md-button class="md-raised">Button</md-button>-->
         <md-list class="settings-list">
             <h3>Column Order</h3>
             <md-list-item layout="column">
@@ -79,34 +67,3 @@
         </md-list>
     </md-content>
 </md-sidenav>
-
-<div layout="column" layout-fill>
-    <div id="tweets-container" layout="row" layout-margin layout-padding layout-fill>
-        <div id="tweets-appdirect" layout="column" flex="32">
-            <md-list>
-                <md-list-item ng-repeat="tweet in appdirect_tweets">
-                    <tweet-widget id = "tweet.id_str"></tweet-widget>
-                </md-list-item>
-            </md-list>
-        </div>
-
-        <div id="tweets-laughingsquid" layout="column" flex="32">
-            <md-list>
-                <md-list-item ng-repeat="tweet in laughingsquid_tweets">
-                    <tweet-widget id = "tweet.id_str"></tweet-widget>
-                </md-list-item>
-            </md-list>
-        </div>
-
-        <div id="tweets-techcrunch" layout="column" flex="32">
-            <md-list>
-                <md-list-item ng-repeat="tweet in techcrunch_tweets">
-                    <tweet-widget id = "tweet.id_str"></tweet-widget>
-                </md-list-item>
-            </md-list>
-        </div>
-    </div>
-</div>
-
-
-
