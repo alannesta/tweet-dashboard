@@ -2,9 +2,9 @@ angular.module('deckbuilder').service('layoutConfig', function () {
     var self = this;
     var defaultConfig =  {
         count: {
-            AppDirect: 5,
-            laughingsquid: 5,
-            techcrunch: 5
+            AppDirect: 10,
+            laughingsquid: 10,
+            techcrunch: 10
         },
         date: "undefined",
         order:['laughingsquid', 'AppDirect', 'techcrunch']

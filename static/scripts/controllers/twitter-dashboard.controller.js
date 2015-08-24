@@ -9,6 +9,12 @@ angular
         loadConfig();
         loadTweets();
 
+        $scope.$on('refresh', function() {
+            console.log('refresh tweets');
+            loadConfig();
+            loadTweets();
+        });
+
         function loadTweets() {
 
             Tweets.get({
