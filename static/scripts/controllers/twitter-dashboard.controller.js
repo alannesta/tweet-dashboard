@@ -1,29 +1,46 @@
 angular
     .module('deckbuilder')
-    .controller('PlaygroundController', ['$scope', 'Tweets', '$mdSidenav', function ($scope, Tweets, $mdSidenav) {
+    .controller('PlaygroundController', ['$scope', 'Tweets', '$mdSidenav', 'layoutConfig', function ($scope, Tweets, $mdSidenav, layoutConfig) {
 
         $scope.toggleSettings = function() {
             $mdSidenav('settings').toggle();
         };
 
-        Tweets.get({
-            screen_name: 'AppDirect'
-        }, function (result) {
-            $scope.appdirect_tweets = result.tweets;
-        });
+        loadConfig();
+        loadTweets();
 
-        Tweets.get({
-            screen_name: 'laughingsquid'
-        }, function (result) {
-            $scope.laughingsquid_tweets = result.tweets;
-        });
+        function loadTweets() {
 
-        Tweets.get({
-            screen_name: 'techcrunch'
-        }, function (result) {
-            $scope.techcrunch_tweets = result.tweets;
-        });
+            Tweets.get({
+                screen_name: $scope.layoutConfig.order[0],
+                count: $scope.layoutConfig.count[$scope.layoutConfig.order[0]]
+            }, function (result) {
+                $scope.first_column_tweets = result.tweets;
+            });
 
-        $scope.title = 'it works';
+            Tweets.get({
+                screen_name: $scope.layoutConfig.order[1],
+                count: $scope.layoutConfig.count[$scope.layoutConfig.order[1]]
+            }, function (result) {
+                $scope.second_column_tweets = result.tweets;
+            });
+
+            Tweets.get({
+                screen_name: $scope.layoutConfig.order[2],
+                count: $scope.layoutConfig.count[$scope.layoutConfig.order[2]]
+            }, function (result) {
+                $scope.third_column_tweets = result.tweets;
+            });
+        }
+
+        function loadConfig() {
+            if (layoutConfig.getConfig())  {
+                $scope.layoutConfig = layoutConfig.getConfig()
+            } else {
+                $scope.layoutConfig = defaultConfig;
+                layoutConfig.saveConfig($scope.layoutConfig);
+            }
+        }
+
     }]);
 
