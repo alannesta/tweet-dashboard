@@ -131,19 +131,26 @@ span.name {
 
 
 /*customized*/
-.tweet {
-  border: 1px solid #e1e8ed;
-  padding: 3px;
-  border-radius: 5px;
-  margin-bottom: 5px;
-}
 
-.tweet .profile-img {
-  width: 48px;
+.app-title {
+  margin-left: 10px;
 }
+.settings-title {
+  line-height: 64px;
+}
+/*.tweet {*/
+  /*border: 1px solid #e1e8ed;*/
+  /*padding: 3px;*/
+  /*border-radius: 5px;*/
+  /*margin-bottom: 5px;*/
+/*}*/
 
-.tweet .content {
-}
+/*.tweet .profile-img {*/
+  /*width: 48px;*/
+/*}*/
+
+/*.tweet .content {*/
+/*}*/
 
 
 
