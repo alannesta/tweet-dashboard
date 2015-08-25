@@ -2,9 +2,9 @@ angular.module('twitter-dashboard').service('layoutConfig', function () {
     var self = this;
     var defaultConfig =  {
         count: {
-            AppDirect: 10,
-            laughingsquid: 10,
-            techcrunch: 10
+            AppDirect: '10',
+            laughingsquid: '10',
+            techcrunch: '10'
         },
         order:['laughingsquid', 'AppDirect', 'techcrunch']
     };
@@ -14,12 +14,6 @@ angular.module('twitter-dashboard').service('layoutConfig', function () {
     };
 
     self.saveConfig = function(config) {
-        if (validate(config)) {
-            window.localStorage.setItem('config', JSON.stringify(config));
-        }
+        window.localStorage.setItem('config', JSON.stringify(config));
     };
-
-    function validate(config) {
-        return true;
-    }
 });
