@@ -8,6 +8,7 @@ angular
             if(validateColumnOrder()){
                 layoutConfig.saveConfig($scope.config);
                 $scope.$emit('refresh');
+                $mdSidenav('settings').toggle();
             }
         };
 

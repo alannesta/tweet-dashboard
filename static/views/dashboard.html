@@ -9,6 +9,9 @@
         <span class="app-title">Twitter Dashboard</span>
     </div>
 </md-toolbar>
+<div class="overlay" layout="row" layout-align="center center" ng-if="isLoading">
+    <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+</div>
 <div ng-include="'views/templates/sidenav.html'" layout="vertical" ng-controller="SideNavController as ctrl"></div>
 <div layout="column" layout-fill>
     <div id="tweets-container" layout="row" layout-margin layout-padding layout-fill>
