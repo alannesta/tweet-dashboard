@@ -9,11 +9,7 @@ var KarmaServer = require('karma').Server;
 
 gulp.task('default', function(cb) {
     //runSequence('install', 'index', 'watch', 'serve', cb);
-    runSequence('install', 'index', 'test', 'serve', 'watch', cb);
-});
-
-gulp.task('watch', function() {
-    gulp.watch(['static/scripts/**/*.js'], ['test']);
+    runSequence('install', 'index', 'test', 'serve', cb);
 });
 
 gulp.task('install', function(cb) {
@@ -38,13 +34,4 @@ gulp.task('serve', function() {
         script: 'server.js',
         env: { 'NODE_ENV': 'development' }
     })
-});
-
-gulp.task('test', function(cb) {
-    var server = new KarmaServer({
-        configFile: __dirname + '/karma.conf.js',
-        singleRun: true
-    }, cb);
-
-    server.start();
 });
