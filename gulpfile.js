@@ -4,12 +4,10 @@ var gulp = require('gulp');
 var runSequence = require('run-sequence');
 var spawn = require('child_process').spawn;
 var nodemon = require('gulp-nodemon');
-var KarmaServer = require('karma').Server;
-
 
 gulp.task('default', function(cb) {
     //runSequence('install', 'index', 'watch', 'serve', cb);
-    runSequence('install', 'index', 'test', 'serve', cb);
+    runSequence('install', 'index', 'serve', cb);
 });
 
 gulp.task('install', function(cb) {
@@ -32,6 +30,7 @@ gulp.task('index', function() {
 gulp.task('serve', function() {
     nodemon({
         script: 'server.js',
+        ignore: ['static/scripts', 'gulpfile.js'],
         env: { 'NODE_ENV': 'development' }
     })
 });

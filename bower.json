@@ -6,7 +6,12 @@
     "jquery": "~2.1.3",
     "underscore": "~1.8.3",
     "requirejs": "~2.1.14",
-    "backbone": "~1.2.2"
+    "backbone": "~1.2.2",
+    "marionette": "~2.2.0"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "resolutions": {
+    "backbone": "1.0.0 - 1.1.2",
+    "underscore": "~1.8.3"
+  }
 }

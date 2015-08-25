@@ -1,20 +1,8 @@
-angular
-    .module('twitter-dashboard', ['ngMaterial', 'ngRoute', 'ngResource'])
-    .config(function ($mdThemingProvider, $mdIconProvider, $routeProvider) {
+var Twitter = new Backbone.Marionette.Application();
 
-        $mdIconProvider
-            .defaultIconSet("./assets/svg/avatars.svg", 128)
-            .icon("menu", "./assets/svg/menu.svg", 24)
-            .icon("twitter", "./assets/svg/twitter.svg", 512)
+Twitter.addInitializer(function(){
+    new Twitter.app.Router();
+    Backbone.history.start();
+});
 
-        $mdThemingProvider.theme('docs-dark', 'default')
-            .primaryPalette('brown')
-            .accentPalette('red');
-
-        $routeProvider
-            .when('/', {
-                templateUrl: 'views/dashboard.html',
-                controller: 'DashboardController as ctrl'
-            })
-
-    });
+Twitter.start();
