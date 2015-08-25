@@ -9,7 +9,7 @@ var KarmaServer = require('karma').Server;
 
 gulp.task('default', function(cb) {
     //runSequence('install', 'index', 'watch', 'serve', cb);
-    runSequence('index', 'test', 'serve', 'watch', cb);
+    runSequence('install', 'index', 'test', 'serve', 'watch', cb);
 });
 
 gulp.task('watch', function() {
@@ -17,7 +17,7 @@ gulp.task('watch', function() {
 });
 
 gulp.task('install', function(cb) {
-    var bower = spawn('bower', ['update', '--config.interactive=false', '--quiet'], {stdio: 'inherit'});
+    var bower = spawn('bower', ['update', '--config.interactive=false'], {stdio: 'inherit'});
 
     bower.on('exit', cb);
 });

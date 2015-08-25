@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Dashboard Controller Test', function() {
+describe('SideNav Controller Test', function() {
 
     var $controller;
     var $rootScope;
