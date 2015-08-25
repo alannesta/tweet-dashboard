@@ -6,7 +6,6 @@ angular.module('twitter-dashboard').service('layoutConfig', function () {
             laughingsquid: 10,
             techcrunch: 10
         },
-        date: "undefined",
         order:['laughingsquid', 'AppDirect', 'techcrunch']
     };
 

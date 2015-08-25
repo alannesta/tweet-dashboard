@@ -162,19 +162,12 @@ span.name {
   order: 0;
 }
 
-/*.tweet {*/
-  /*border: 1px solid #e1e8ed;*/
-  /*padding: 3px;*/
-  /*border-radius: 5px;*/
-  /*margin-bottom: 5px;*/
-/*}*/
+button.md-primary {
+  margin-left: 20px;
+}
 
-/*.tweet .profile-img {*/
-  /*width: 48px;*/
-/*}*/
-
-/*.tweet .content {*/
-/*}*/
-
+button.md-warn {
+  margin-right: 20px;
+}
 
 

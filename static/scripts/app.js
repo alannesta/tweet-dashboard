@@ -13,7 +13,7 @@ angular
 
         $routeProvider
             .when('/', {
-                templateUrl: 'views/playground.html',
+                templateUrl: 'views/dashboard.html',
                 controller: 'DashboardController as ctrl'
             })
 

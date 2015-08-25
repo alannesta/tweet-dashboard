@@ -1,14 +1,8 @@
 angular
     .module('twitter-dashboard')
-    .controller('SideNavController', ['$scope', 'layoutConfig', function($scope, layoutConfig) {
+    .controller('SideNavController', ['$scope', 'layoutConfig', '$mdSidenav', function($scope, layoutConfig, $mdSidenav) {
 
-        $scope.config = layoutConfig.getConfig();
-
-        $scope.order = {
-            AppDirect: $scope.config.order.indexOf('AppDirect') + 1,
-            laughingsquid: $scope.config.order.indexOf('laughingsquid') + 1,
-            techcrunch: $scope.config.order.indexOf('techcrunch') + 1
-        };
+        initSettings();
 
         $scope.save = function() {
             if(validateColumnOrder()){
@@ -16,6 +10,21 @@ angular
                 $scope.$emit('refresh');
             }
         };
+
+        $scope.cancel = function() {
+            initSettings();     // resotre settings from localStorage
+            $mdSidenav('settings').toggle();
+        };
+
+        function initSettings() {
+            $scope.config = layoutConfig.getConfig();
+
+            $scope.order = {
+                AppDirect: $scope.config.order.indexOf('AppDirect') + 1,
+                laughingsquid: $scope.config.order.indexOf('laughingsquid') + 1,
+                techcrunch: $scope.config.order.indexOf('techcrunch') + 1
+            };
+        }
 
         function validateColumnOrder() {
             if(validateDups($scope.order)) {
